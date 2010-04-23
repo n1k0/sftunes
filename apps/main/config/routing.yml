@@ -1,0 +1,16 @@
+fortune:
+  class: sfDoctrineRouteCollection
+  options: 
+    model:      Fortune
+    action:     [list, new, create, edit, show]
+    object_actions:
+      comment:  post
+      down:     put
+      up:       put
+    collection_actions: 
+      top:      get 
+      worst:    get
+
+homepage:
+  url:   /
+  param: { module: fortune, action: index }

@@ -1,0 +1,4 @@
+all:
+  fortunes:
+    max_items:            10
+    max_top_contributors: 5

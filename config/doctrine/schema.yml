@@ -1,0 +1,56 @@
+Fortune:
+  actAs:
+    Timestampable: ~
+  columns:
+    author: 
+      type: string(255)
+      notnull: true
+    title: 
+      type: string(255)
+      notnull: true
+    content:
+      type: string(5000)
+      notnull: true
+    votes:
+      type: integer
+      default: 0
+  relations:
+    Comments:
+      type: many
+      class: Comment
+      local: id
+      foreign: fortune_id
+      onDelete: CASCADE
+  indexes:
+    author_idx:
+      fields: [author]
+    votes_idx:
+      fields: [votes]
+    author_votes_idx:
+      fields: [author, votes]
+    date_idx:
+      fields: [created_at]
+
+Comment:
+  actAs:
+    Timestampable: ~
+  columns:
+    fortune_id:
+      type: integer
+      notnull: true
+    author: 
+      type: string(255)
+      notnull: true
+    title: 
+      type: string(255)
+      notnull: true
+    content:
+      type: string(5000)
+      notnull: true
+  relations:
+    Fortune:
+      type: one
+      class: Fortune
+      local: fortune_id
+      foreign: id
+      onDelete: CASCADE

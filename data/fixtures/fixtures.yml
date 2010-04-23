@@ -1,0 +1,43 @@
+Fortune:
+  f1:
+    author: NiKo
+    title: My first fortune
+    content: |
+      <niko> plop
+      <dude> yeah
+    votes: 3
+    created_at: "<?php echo date('Y-m-d H:i:s', time() - 86400) ?>"
+  f2:
+    author: Dude
+    title: A second fortune
+    content: |
+      <dude> wtf?
+      <nikko> dunno.
+    votes: 1
+    created_at: "<?php echo date('Y-m-d H:i:s', time() - (86400 * 2)) ?>"
+  f3:
+    author: NiKo
+    title: Here's a great one
+    content: |
+      <niko> How does Chuck Norris handle PHP?
+      <dude> Dunno
+      <niko> Roundkicking its butt
+    votes: 8
+    created_at: "<?php echo date('Y-m-d H:i:s', time() - (86400 * 3)) ?>"
+
+Comment:
+  f1c1:
+    Fortune: f1
+    author: Paul
+    content: Sure.
+    created_at: "<?php echo date('Y-m-d H:i:s', time() - 2000) ?>"
+  f1c2:
+    Fortune: f1
+    author: John
+    content: Probably.
+    created_at: "<?php echo date('Y-m-d H:i:s', time() - 1000) ?>"
+  f3c1:
+    Fortune: f1
+    author: Rasmus Lerdorf
+    content: Lol
+    created_at: "<?php echo date('Y-m-d H:i:s', time() - 8000) ?>"
