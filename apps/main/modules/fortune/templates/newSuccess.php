@@ -1,3 +1,5 @@
+<?php slot('page_title', 'Add a fortune') ?>
+
 <?php echo form_tag_for($form, 'fortune') ?>
   <?php $form->renderHiddenFields() ?>
   <?php $form->renderGlobalErrors() ?>

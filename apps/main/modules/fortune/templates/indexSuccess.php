@@ -1,3 +1,5 @@
+<?php slot('page_title', 'Fortunes list') ?>
+
 <?php if (count($results = $pager->getResults())): ?>
 <?php foreach ($results as $fortune): ?>
   <?php include_partial('fortune/fortune', array('fortune' => $fortune)) ?>
