@@ -107,9 +107,10 @@ class fortuneActions extends sfActions
 
   protected function getPager(Doctrine_Query $query)
   {
-    $pager = new sfDoctrinePager('Fortune', sfConfig::get('app_fortune_max_items', 10));
+    $pager = new sfDoctrinePager('Fortune', sfConfig::get('app_fortunes_max_items', 10));
     
     $pager->setQuery($query);
+    $pager->setPage($this->getRequest()->getParameter('page', 1));
     
     $pager->init();
 

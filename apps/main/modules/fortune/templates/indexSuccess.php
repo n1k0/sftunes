@@ -9,5 +9,18 @@
 <?php endif; ?>
 
 <?php if ($pager->haveToPaginate()): ?>
+<nav class="pagination">
+  <ul>
+    <?php if ($pager->getPreviousPage()): ?>
+    <li>
+      <a href="<?php echo url_for('fortune') ?>?page=<?php echo $pager->getPreviousPage() ?>">Previous</a>
+    </li>
+    <?php endif; ?>
+    
+    <?php if ($pager->getNextPage()): ?>
+    <li>
+      <a href="<?php echo url_for('fortune') ?>?page=<?php echo $pager->getNextPage() ?>">Next</a>
+    </li>
+    <?php endif; ?>
 
 <?php endif; ?>
